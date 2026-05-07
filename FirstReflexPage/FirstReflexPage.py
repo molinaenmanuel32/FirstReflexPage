@@ -1,39 +1,55 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
+"""Mi primera página web con Reflex."""
 
 import reflex as rx
 from rxconfig import config
 
 
 class State(rx.State):
-    """The app state."""
-    count: int = 0
+    """El estado de la aplicación."""
+    mensaje: str = "¡Bienvenido a mi primera página web con reflex!"
 
     @rx.event
-    def increment(self):
-        self.count += 1
-
-    @rx.event
-    def decrement(self):
-        self.count -= 1
+    def cambiar_mensaje(self):
+        self.mensaje = "¡Hiciste clic! funciona "
 
 
 def index() -> rx.Component:
     return rx.container(
-        rx.color_mode.button(position="top-right"),
         rx.vstack(
-            rx.heading("Welcome to Emañoland!", size="9"),
-            rx.hstack(
-                rx.button("Decrement", color_scheme="ruby", on_click=State.decrement),
-                rx.heading(State.count, font_size="2em"),
-                rx.button("Increment", color_scheme="grass", on_click=State.increment),
-                spacing="4",
+            # Título principal
+            rx.heading(
+                "¡Bienvenido a Emañoland!",
+                size="9",
+            ),
+            
+            rx.text(
+                "Esta página fue creada con Reflex, "
+                "un framework para el desarrollo web.",
+                size="5",
+                color="gray",
+            ),
+         
+            rx.text(
+                State.mensaje,
+                size="4",
+                weight="bold",
+                color="violet",
+            ),
+           
+            rx.button(
+                "¡Haz clic aquí!",
+                on_click=State.cambiar_mensaje,
+                color_scheme="violet",
+                size="3",
+                radius="full",
             ),
             spacing="5",
             justify="center",
             min_height="85vh",
+            align="center",
         ),
     )
 
 
 app = rx.App()
-app.add_page(index)
+app.add_page(index, title="Mi Primera Web con Reflex")

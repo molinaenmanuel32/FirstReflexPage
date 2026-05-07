@@ -45,11 +45,7 @@ cd FirstReflexPage
 poetry --version
 ```
 
-Si no lo tienes, instálalo con:
-
-```bash
-pip install poetry
-```
+Si no lo tienes, instálalo siguiendo la [guía oficial de Poetry](https://python-poetry.org/docs/#installation).
 
 ### Paso 3 — Revisar el archivo `pyproject.toml`
 
@@ -102,14 +98,6 @@ Sabrás que el entorno está activo cuando veas esto al inicio de la línea:
 (firstreflexpage) PS C:\...>
 ```
 
-### Paso 6 — Inicializar Reflex
-
-```bash
-reflex init
-```
-
-Cuando aparezca el menú, selecciona la opción **0** para empezar desde cero con una app en blanco.
-
 ---
 
 ## Cómo Ejecutar la Aplicación
@@ -139,18 +127,6 @@ FirstReflexPage/
 ├── pyproject.toml           # Configuración de Poetry
 ├── .gitignore
 └── README.md
-```
-
----
-
-## Guardar cambios en GitHub
-
-Cada vez que hagas cambios importantes, guarda tu progreso con:
-
-```bash
-git add .
-git commit -m "descripción de los cambios"
-git push origin main
 ```
 
 ---
